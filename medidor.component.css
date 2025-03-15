@@ -1,0 +1,78 @@
+.contenedor-medidor {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pintado {
+  border: 1px solid #000;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100px; /* Aumenta el ancho de la barra */
+  height: 400px;
+  margin: 20px;
+  background: linear-gradient(to bottom, var(--color, #800080) var(--value, 50%), transparent var(--value, 50%));
+  border-radius: 10px;
+  position: relative;
+  writing-mode: bt-lr; /* Fuerza la orientación vertical */
+  -webkit-writing-mode: vertical-rl; /* Para navegadores basados en WebKit */
+}
+
+.pintado::-webkit-slider-runnable-track {
+  width: 100px;
+  height: 400px;
+  background: transparent;
+  border: none;
+}
+
+.pintado::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 0; /* Elimina el ancho del selector */
+  height: 0; /* Elimina la altura del selector */
+  background: transparent; /* Hace el selector transparente */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el selector */
+  border: none; /* Elimina el borde del selector */
+}
+
+.pintado::-moz-range-thumb {
+  width: 0; /* Elimina el ancho del selector */
+  height: 0; /* Elimina la altura del selector */
+  background: transparent; /* Hace el selector transparente */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el selector */
+  border: none; /* Elimina el borde del selector */
+}
+
+.pintado::-ms-thumb {
+  width: 0; /* Elimina el ancho del selector */
+  height: 0; /* Elimina la altura del selector */
+  background: transparent; /* Hace el selector transparente */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el selector */
+  border: none; /* Elimina el borde del selector */
+}
+
+/* Estilos específicos para navegadores basados en WebKit (Chromium) */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  .pintado {
+    transform: rotate(180deg); /* Invierte la dirección del control deslizante */
+  }
+}
+
+/* Media queries para dispositivos móviles */
+@media (max-width: 768px) {
+  .pintado {
+    width: 80px; /* Reduce el ancho de la barra */
+    height: 300px; /* Reduce la altura de la barra */
+  }
+}
+
+@media (max-width: 480px) {
+  .contenedor-medidor p {
+    font-size: 11px; /* Reduce el tamaño de la fuente */
+  }
+  .pintado {
+    width: 60px; /* Reduce aún más el ancho de la barra */
+    height: 200px; /* Reduce aún más la altura de la barra */
+  }
+}

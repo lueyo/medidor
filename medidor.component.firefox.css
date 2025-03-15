@@ -1,0 +1,57 @@
+.contenedor-medidor {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pintado {
+  border: 1px solid #000;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100px; /* Aumenta el ancho de la barra */
+  height: 400px;
+  margin: 20px;
+  background: linear-gradient(to top, var(--color, #800080) var(--value, 50%), transparent var(--value, 50%));
+  border-radius: 10px;
+  position: relative;
+}
+
+.pintado::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 0; /* Hace el selector invisible */
+  height: 0;
+  background: transparent;
+}
+
+.pintado::-moz-range-thumb {
+  width: 0; /* Hace el selector invisible */
+  height: 0;
+  visibility: hidden;
+  background: transparent;
+}
+
+.pintado::-ms-thumb {
+  width: 0; /* Hace el selector invisible */
+  height: 0;
+  background: transparent;
+}
+
+/* Media queries para dispositivos móviles */
+@media (max-width: 768px) {
+  .pintado {
+      width: 80px; /* Reduce el ancho de la barra */
+      height: 300px; /* Reduce la altura de la barra */
+  }
+}
+
+@media (max-width: 480px) {
+  .contenedor-medidor p {
+      font-size: 11px; /* Reduce el tamaño de la fuente */
+  }
+  .pintado {
+      width: 60px; /* Reduce aún más el ancho de la barra */
+      height: 200px; /* Reduce aún más la altura de la barra */
+  }
+}
